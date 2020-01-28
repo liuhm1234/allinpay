@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     compress=true默认压缩, type为n的域都为BCD类型，变长域长度也要压缩成BCD码
+-->
+<ISO8583Config compress="true">
+    <!-- type为忽略大小写
+        A   - 字母左靠，右部多余部分填空格
+        AN  - 字母和/或数字，左靠，右部多余部分填空格
+        ANS - 字母、数字和/或特殊符号，左靠，右部多余部分填空格
+        AS  - 字母和/或特殊符号，左靠，右部多余部分填空格
+        B   - 二进制位，B64代表8字节
+        N   - 数值，右靠，首位有效数字前填充零。若表示金额，则最右两位表示角分
+        S   - 特殊符号
+        Z   - 磁卡第二、三磁道的数据类型
+        ..	- 表示可变长域长度用1个字节表示
+        ...	- 表示可变长域长度用2个字节表示
+    -->  <!-- linqladd 建行8583域定义 -->
+    <field id="1" type="N4"/>
+	<field id="2" type="B..160"/>
+	<field id="3" type="N6"/>
+	<field id="4" type="N12"/>
+	<field id="6" type="N12"/>
+	<field id="10" type="N8"/>
+	<field id="11" type="N6"/>
+	<field id="12" type="N6"/>
+	<field id="13" type="N4"/>
+	<field id="14" type="N4"/>
+	<field id="15" type="N4"/>
+	<field id="22" type="N3" align="left"/>
+	<field id="23" type="N3" align="right"/>
+	<field id="25" type="N2"/>
+	<field id="26" type="N2"/>
+	<field id="32" type="N..11"/>
+	<field id="35" type="B..296"/>
+	<field id="36" type="B...832"/>
+	<field id="37" type="AN12"/>
+	<field id="38" type="AN6"/>
+	<field id="39" type="AN2"/>
+	<field id="41" type="ANS8"/>
+	<field id="42" type="ANS15"/>
+	<field id="44" type="ANS..25"/>
+	<field id="46" type="B...8000"/>
+	<field id="47" type="ANS...512"/>
+	<field id="48" type="N...322"/>
+	<field id="49" type="AN3"/>
+	<field id="50" type="AN3"/>
+	<field id="52" type="B128"/>
+	<field id="53" type="N16"/>
+	<field id="54" type="ANS...40"/>
+	<field id="55" type="B...7992"/>
+	<field id="58" type="ANS...100"/>
+	<field id="59" type="ANS...512"/>
+	<field id="60" type="N...27"/>
+	<field id="61" type="N...29"/>
+	<field id="62" type="B...7992"/>
+	<field id="63" type="ANS...163"/>
+	<field id="64" type="B64"/>
+</ISO8583Config>
+
